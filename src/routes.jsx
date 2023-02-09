@@ -15,30 +15,42 @@ const icon = {
 
 export const routes = [
   {
-    layout: "dashboard",
+    layout: "projects",
     pages: [
       {
         icon: <HomeIcon {...icon} />,
-        name: "dashboard",
+        name: "Proyectos",
         path: "/home",
         element: <Home />,
       },
       {
-        icon: <UserCircleIcon {...icon} />,
-        name: "profile",
-        path: "/profile",
+        icon: <TableCellsIcon {...icon} />,
+        name: "Mis campañas",
+        path: "/campañas",
         element: <Profile />,
       },
       {
-        icon: <TableCellsIcon {...icon} />,
-        name: "tables",
-        path: "/tables",
+        icon: <UserCircleIcon {...icon} />,
+        name: "Mi perfil",
+        path: "/perfil",
         element: <Tables />,
       },
       {
         icon: <BellIcon {...icon} />,
-        name: "notifactions",
-        path: "/notifactions",
+        name: "Mi negocio",
+        path: "/mi-negocio",
+        element: <Notifications />,
+      },
+      {
+        icon: <BellIcon {...icon} />,
+        name: "Mis transacciones",
+        path: "/mis-transacciones",
+        element: <Notifications />,
+      },
+      {
+        icon: <BellIcon {...icon} />,
+        name: "Mi portafolio",
+        path: "/mi-portafolio",
         element: <Notifications />,
       },
     ],

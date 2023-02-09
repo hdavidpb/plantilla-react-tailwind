@@ -30,13 +30,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
         }`}
       >
         <Link to="/" className="flex items-center gap-4 py-6 px-8">
-          <Avatar src={brandImg} size="sm" />
-          <Typography
-            variant="h6"
-            color={sidenavType === "dark" ? "white" : "blue-gray"}
-          >
-            {brandName}
-          </Typography>
+          <Avatar src={brandImg} style={{ flex: 1, objectFit: "contain" }} />
         </Link>
         <IconButton
           variant="text"
@@ -76,7 +70,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
                           ? "white"
                           : "blue-gray"
                       }
-                      className="flex items-center gap-4 px-4 capitalize"
+                      className={"flex items-center gap-4 px-4 capitalize"}
                       fullWidth
                     >
                       {icon}

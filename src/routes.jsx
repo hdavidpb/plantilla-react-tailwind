@@ -5,6 +5,9 @@ import {
   BellIcon,
   ArrowRightOnRectangleIcon,
   UserPlusIcon,
+  BriefcaseIcon,
+  BanknotesIcon,
+  FolderIcon,
 } from "@heroicons/react/24/solid";
 import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
@@ -26,7 +29,7 @@ export const routes = [
       {
         icon: <TableCellsIcon {...icon} />,
         name: "Mis campañas",
-        path: "/campañas",
+        path: "/campains",
         element: <Profile />,
       },
       {
@@ -36,19 +39,19 @@ export const routes = [
         element: <Tables />,
       },
       {
-        icon: <BellIcon {...icon} />,
+        icon: <BriefcaseIcon {...icon} />,
         name: "Mi negocio",
         path: "/mi-negocio",
         element: <Notifications />,
       },
       {
-        icon: <BellIcon {...icon} />,
+        icon: <BanknotesIcon {...icon} />,
         name: "Mis transacciones",
         path: "/mis-transacciones",
         element: <Notifications />,
       },
       {
-        icon: <BellIcon {...icon} />,
+        icon: <FolderIcon {...icon} />,
         name: "Mi portafolio",
         path: "/mi-portafolio",
         element: <Notifications />,

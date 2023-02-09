@@ -12,12 +12,12 @@ export function Auth() {
   const navbarRoutes = [
     {
       name: "dashboard",
-      path: "/dashboard/home",
+      path: "/projects/home",
       icon: ChartPieIcon,
     },
     {
       name: "profile",
-      path: "/dashboard/home",
+      path: "/projects/perfil",
       icon: UserIcon,
     },
     {
@@ -34,9 +34,9 @@ export function Auth() {
 
   return (
     <div className="relative min-h-screen w-full">
-      <div className="container relative z-40 mx-auto p-4">
+      {/* <div className="container relative z-40 mx-auto p-4">
         <Navbar routes={navbarRoutes} />
-      </div>
+      </div> */}
       <Routes>
         {routes.map(
           ({ layout, pages }) =>
@@ -47,7 +47,7 @@ export function Auth() {
         )}
       </Routes>
       <div className="container absolute bottom-8 left-2/4 z-10 mx-auto -translate-x-2/4 text-white">
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

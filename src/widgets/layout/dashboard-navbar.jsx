@@ -68,7 +68,7 @@ export function DashboardNavbar() {
             {page}
           </Typography>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-between">
           <IconButton
             variant="text"
             color="blue-gray"

@@ -3,15 +3,24 @@ import {
   Navbar,
   Typography,
   Button,
-  Breadcrumbs,
   Menu,
   MenuHandler,
   MenuList,
   MenuItem,
   Avatar,
+  IconButton,
+  Breadcrumbs,
 } from "@material-tailwind/react";
-import { UserCircleIcon, Cog6ToothIcon } from "@heroicons/react/24/solid";
-import { useMaterialTailwindController, setOpenConfigurator } from "@/context";
+import {
+  UserCircleIcon,
+  Cog6ToothIcon,
+  Bars3Icon,
+} from "@heroicons/react/24/solid";
+import {
+  useMaterialTailwindController,
+  setOpenConfigurator,
+  setOpenSidenav,
+} from "@/context";
 import routes from "@/routes";
 
 export function DashboardNavbar() {
@@ -60,6 +69,15 @@ export function DashboardNavbar() {
           </Typography>
         </div>
         <div className="flex items-center">
+          <IconButton
+            variant="text"
+            color="blue-gray"
+            className="grid xl:hidden"
+            onClick={() => setOpenSidenav(dispatch, !openSidenav)}
+          >
+            <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
+          </IconButton>
+
           <Menu>
             <MenuHandler>
               <Button variant="text" color="blue-gray">

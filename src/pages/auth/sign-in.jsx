@@ -40,8 +40,11 @@ export function SignIn() {
           </CardBody>
           <CardFooter className="pt-0">
             <Button
-              color="pink"
-              variant="gradient"
+              style={{
+                boxShadow: "none",
+                backgroundColor: "rgb(255, 119, 175 )",
+                color: "white",
+              }}
               fullWidth
               onClick={() => navigate("/projects/home")}
             >
@@ -53,7 +56,9 @@ export function SignIn() {
                 <Typography
                   as="span"
                   variant="small"
-                  color="pink"
+                  style={{
+                    color: "rgb(255, 119, 175 )",
+                  }}
                   className="ml-1 font-bold"
                 >
                   Sign up

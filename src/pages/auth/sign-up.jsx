@@ -39,7 +39,14 @@ export function SignUp() {
             </div>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button color="pink" variant="gradient" fullWidth>
+            <Button
+              style={{
+                boxShadow: "none",
+                backgroundColor: "rgb(255, 119, 175 )",
+                color: "white",
+              }}
+              fullWidth
+            >
               Sign Up
             </Button>
             <Typography variant="small" className="mt-6 flex justify-center">
@@ -48,7 +55,7 @@ export function SignUp() {
                 <Typography
                   as="span"
                   variant="small"
-                  color="pink"
+                  style={{ color: "rgb(255, 119, 175 )" }}
                   className="ml-1 font-bold"
                 >
                   Sign in

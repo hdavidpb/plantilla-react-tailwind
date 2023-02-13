@@ -57,6 +57,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
                 </Typography>
               </li>
             )}
+
             {pages.map(({ icon, name, path }) => (
               <li key={name}>
                 <NavLink to={`/${layout}${path}`}>
@@ -69,14 +70,6 @@ export function Sidenav({ brandImg, brandName, routes }) {
                           : "white",
                         color: isActive ? "white" : "rgb(96 125 139 / 81%)",
                       }}
-                      // variant={isActive ? "gradient" : "text"}
-                      // color={
-                      //   isActive
-                      //     ? sidenavColor
-                      //     : sidenavType === "dark"
-                      //     ? "white"
-                      //     : "blue-gray"
-                      // }
                       className={"flex items-center gap-4 px-4 capitalize"}
                       fullWidth
                     >

@@ -12,13 +12,22 @@ import {
   Avatar,
   Tooltip,
   Progress,
+  Tabs,
+  Tab,
+  TabsHeader,
 } from "@material-tailwind/react";
 import {
   ClockIcon,
   CheckIcon,
   EllipsisVerticalIcon,
   ArrowUpIcon,
+  RocketLaunchIcon,
 } from "@heroicons/react/24/outline";
+import {
+  HomeIcon,
+  ChatBubbleLeftEllipsisIcon,
+  Cog6ToothIcon,
+} from "@heroicons/react/24/solid";
 import { StatisticsCard } from "@/widgets/cards";
 import { StatisticsChart } from "@/widgets/charts";
 import {
@@ -31,7 +40,7 @@ import {
 export function Home() {
   return (
     <div className="mt-12">
-      <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
+      {/* <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
         {statisticsCardsData.map(({ icon, title, footer, ...rest }) => (
           <StatisticsCard
             key={title}
@@ -48,25 +57,101 @@ export function Home() {
             }
           />
         ))}
+      </div> */}
+      <div className="w-100 mb-10">
+        <Tabs value="magics">
+          <TabsHeader>
+            <Tab value="magics">
+              <HomeIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
+              magics
+            </Tab>
+            <Tab value="popular">
+              <ChatBubbleLeftEllipsisIcon className="-mt-0.5 mr-2 inline-block h-5 w-5" />
+              Populares
+            </Tab>
+            <Tab value="news">
+              <Cog6ToothIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
+              Nuevos
+            </Tab>
+            <Tab value="finished">
+              <Cog6ToothIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
+              Por Terminar
+            </Tab>
+          </TabsHeader>
+        </Tabs>
       </div>
       <div className="mb-6 grid grid-cols-1 gap-y-12 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
-        {statisticsChartsData.map((props) => (
+        {statisticsChartsData.map((props, idx) => (
           <StatisticsChart
-            key={props.title}
+            key={idx}
             {...props}
             footer={
               <Typography
                 variant="small"
                 className="flex items-center font-normal text-blue-gray-600"
               >
-                <ClockIcon strokeWidth={2} className="h-4 w-4 text-inherit" />
-                &nbsp;{props.footer}
+                <RocketLaunchIcon
+                  strokeWidth={2}
+                  className="h-4 w-4 text-inherit"
+                />
+                {
+                  <>
+                    <Tooltip content={"Javier"}>
+                      <Avatar
+                        src="https://cdn2.hubspot.net/hubfs/53/Que%20es%20un%20emprendedor.jpg"
+                        alt="avatar"
+                        size="xs"
+                        variant="circular"
+                        // className={`cursor-pointer border-2 border-white ${
+                        //   key === 0 ? "" : "-ml-2.5"
+                        // }`}
+                        className="cursor-pointer border-2 border-white"
+                      />
+                    </Tooltip>
+                    <Tooltip content={"Javier"}>
+                      <Avatar
+                        src="https://latinaslifestyle.org/wp-content/uploads/2021/11/Tienes-personalidad-de-emprendedora-2.png"
+                        alt="avatar"
+                        size="xs"
+                        variant="circular"
+                        // className={`cursor-pointer border-2 border-white ${
+                        //   key === 0 ? "" : "-ml-2.5"
+                        // }`}
+                        className="-ml-2.5 cursor-pointer border-2 border-white"
+                      />
+                    </Tooltip>
+                    <Tooltip content={"Javier"}>
+                      <Avatar
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgv2h1zoYcSL1NiNqtiROnPWrDAFOxWO67zg&usqp=CAU"
+                        alt="avatar"
+                        size="xs"
+                        variant="circular"
+                        // className={`cursor-pointer border-2 border-white ${
+                        //   key === 0 ? "" : "-ml-2.5"
+                        // }`}
+                        className="-ml-2.5 cursor-pointer border-2 border-white"
+                      />
+                    </Tooltip>
+                    <Tooltip content={"Javier"}>
+                      <Avatar
+                        src="http://www.kondinero.com/hubfs/Blog_Posts/Caractersticas-de-una-persona-emprendedora.jpg"
+                        alt="avatar"
+                        size="xs"
+                        variant="circular"
+                        // className={`cursor-pointer border-2 border-white ${
+                        //   key === 0 ? "" : "-ml-2.5"
+                        // }`}
+                        className="-ml-2.5 cursor-pointer border-2 border-white"
+                      />
+                    </Tooltip>
+                  </>
+                }
               </Typography>
             }
           />
         ))}
       </div>
-      <div className="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-3">
+      {/* <div className="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-3">
         <Card className="overflow-hidden xl:col-span-2">
           <CardHeader
             floated={false}
@@ -251,7 +336,7 @@ export function Home() {
             )}
           </CardBody>
         </Card>
-      </div>
+      </div> */}
     </div>
   );
 }

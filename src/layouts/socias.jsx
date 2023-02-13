@@ -10,7 +10,7 @@ import {
 import routes from "@/routes";
 import { useMaterialTailwindController, setOpenConfigurator } from "@/context";
 
-export function Dashboard() {
+export function Socias() {
   const [controller, dispatch] = useMaterialTailwindController();
   const { sidenavType } = controller;
 
@@ -25,8 +25,8 @@ export function Dashboard() {
       />
       <div className="p-4 xl:ml-80">
         <DashboardNavbar />
-        <Configurator />
-        <IconButton
+        {/* <Configurator /> */}
+        {/* <IconButton
           size="lg"
           color="white"
           className="fixed bottom-8 right-8 z-40 rounded-full shadow-blue-gray-900/10"
@@ -34,7 +34,7 @@ export function Dashboard() {
           onClick={() => setOpenConfigurator(dispatch, true)}
         >
           <Cog6ToothIcon className="h-5 w-5" />
-        </IconButton>
+        </IconButton> */}
         <Routes>
           {routes.map(
             ({ layout, pages }) =>
@@ -44,14 +44,14 @@ export function Dashboard() {
               ))
           )}
         </Routes>
-        <div className="text-blue-gray-600">
+        {/* <div className="text-blue-gray-600">
           <Footer />
-        </div>
+        </div> */}
       </div>
     </div>
   );
 }
 
-Dashboard.displayName = "/src/layout/dashboard.jsx";
+Socias.displayName = "/src/layout/socias.jsx";
 
-export default Dashboard;
+export default Socias;

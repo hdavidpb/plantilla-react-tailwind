@@ -4,6 +4,8 @@ import {
   CardBody,
   CardFooter,
   Typography,
+  Avatar,
+  
 } from "@material-tailwind/react";
 import PropTypes from "prop-types";
 import Chart from "react-apexcharts";
@@ -11,10 +13,22 @@ import Chart from "react-apexcharts";
 export function StatisticsChart({ color, chart, title, description, footer }) {
   return (
     <Card>
-      <CardHeader variant="gradient" color={color}>
-        <Chart {...chart} />
+      <CardHeader variant="gradient">
+        {/* <Chart {...chart} /> */}
+        <img
+          src="https://www.socias.org/wp-content/uploads/jet-engine-forms/906/2023/02/20230202_174811-scaled.jpg"
+          alt="project-1"
+        />
       </CardHeader>
-      <CardBody className="p-6">
+
+      <CardBody className="relative p-6">
+        <Avatar
+          size="xl"
+          variant="circular"
+          src="https://uploads-ssl.webflow.com/619916db2569bf79a09da655/61aa7d15a514f23b6b751b01_javier1.jpg"
+          className="absolute -top-10 right-6"
+        />
+
         <Typography variant="h6" color="blue-gray">
           {title}
         </Typography>
@@ -24,7 +38,21 @@ export function StatisticsChart({ color, chart, title, description, footer }) {
       </CardBody>
       {footer && (
         <CardFooter className="border-t border-blue-gray-50 px-6 py-5">
+          <div className="w-full rounded-full bg-gray-200 dark:bg-gray-700">
+            <div
+              className="mb-2 rounded-full bg-blue-600 p-0.5 text-center text-xs font-medium leading-none text-blue-100"
+              style={{ width: "45%" }}
+            >
+              45%
+            </div>
+          </div>
           {footer}
+          <Typography
+            variant="small"
+            className="font-normal text-blue-gray-600"
+          >
+            4 socias han aportado a este proyecto
+          </Typography>
         </CardFooter>
       )}
     </Card>

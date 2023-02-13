@@ -8,6 +8,7 @@ import {
   BriefcaseIcon,
   BanknotesIcon,
   FolderIcon,
+  LockClosedIcon,
 } from "@heroicons/react/24/solid";
 import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
@@ -64,16 +65,16 @@ export const routes = [
     pages: [
       {
         icon: <ArrowRightOnRectangleIcon {...icon} />,
-        name: "sign in",
+        name: "Cerrar Sesión",
         path: "/sign-in",
         element: <SignIn />,
       },
-      {
-        icon: <UserPlusIcon {...icon} />,
-        name: "sign up",
-        path: "/sign-up",
-        element: <SignUp />,
-      },
+      // {
+      //   icon: <UserPlusIcon {...icon} />,
+      //   name: "sign up",
+      //   path: "/sign-up",
+      //   element: <SignUp />,
+      // },
     ],
   },
 ];

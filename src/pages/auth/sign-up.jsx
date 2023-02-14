@@ -10,6 +10,7 @@ import {
   Typography,
   Avatar,
 } from "@material-tailwind/react";
+import SCButton from "@/components/SCButton";
 
 export function SignUp() {
   return (
@@ -39,16 +40,7 @@ export function SignUp() {
             </div>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button
-              style={{
-                boxShadow: "none",
-                backgroundColor: "rgb(255, 119, 175 )",
-                color: "white",
-              }}
-              fullWidth
-            >
-              Sign Up
-            </Button>
+            <SCButton fullWidth>Sign Up</SCButton>
             <Typography variant="small" className="mt-6 flex justify-center">
               Already have an account?
               <Link to="/auth/sign-in">

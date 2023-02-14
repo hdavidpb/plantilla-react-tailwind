@@ -16,19 +16,8 @@ import {
   Tab,
   TabsHeader,
 } from "@material-tailwind/react";
-import {
-  ClockIcon,
-  CheckIcon,
-  EllipsisVerticalIcon,
-  ArrowUpIcon,
-  RocketLaunchIcon,
-} from "@heroicons/react/24/outline";
-import {
-  HomeIcon,
-  ChatBubbleLeftEllipsisIcon,
-  Cog6ToothIcon,
-} from "@heroicons/react/24/solid";
-import { StatisticsCard } from "@/widgets/cards";
+import { RocketLaunchIcon } from "@heroicons/react/24/outline";
+
 import { StatisticsChart } from "@/widgets/charts";
 import {
   statisticsCardsData,
@@ -61,22 +50,10 @@ export function Home() {
       <div className="w-100 mb-10">
         <Tabs value="magics">
           <TabsHeader>
-            <Tab value="magics">
-              <HomeIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
-              magics
-            </Tab>
-            <Tab value="popular">
-              <ChatBubbleLeftEllipsisIcon className="-mt-0.5 mr-2 inline-block h-5 w-5" />
-              Populares
-            </Tab>
-            <Tab value="news">
-              <Cog6ToothIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
-              Nuevos
-            </Tab>
-            <Tab value="finished">
-              <Cog6ToothIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
-              Por Terminar
-            </Tab>
+            <Tab value="magics">magicos</Tab>
+            <Tab value="popular">Populares</Tab>
+            <Tab value="news">Nuevos</Tab>
+            <Tab value="finished">Por Terminar</Tab>
           </TabsHeader>
         </Tabs>
       </div>

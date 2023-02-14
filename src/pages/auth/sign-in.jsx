@@ -10,6 +10,7 @@ import {
   Typography,
   Avatar,
 } from "@material-tailwind/react";
+import SCButton from "@/components/SCButton";
 
 export function SignIn() {
   const navigate = useNavigate();
@@ -39,17 +40,9 @@ export function SignIn() {
             </div>
           </CardBody>
           <CardFooter className="pt-0">
-            <Button
-              style={{
-                boxShadow: "none",
-                backgroundColor: "rgb(255, 119, 175 )",
-                color: "white",
-              }}
-              fullWidth
-              onClick={() => navigate("/projects/home")}
-            >
+            <SCButton fullWidth onClick={() => navigate("/projects/home")}>
               Ingresar
-            </Button>
+            </SCButton>
             <Typography variant="small" className="mt-6 flex justify-center">
               Don't have an account?
               <Link to="/auth/sign-up">

@@ -9,6 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { useMaterialTailwindController, setOpenSidenav } from "@/context";
 import { Bars3Icon } from "@heroicons/react/24/solid";
+import SCButton from "@/components/SCButton";
 
 export function Sidenav({ brandImg, brandName, routes }) {
   const [controller, dispatch] = useMaterialTailwindController();
@@ -62,7 +63,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
               <li key={name}>
                 <NavLink to={`/${layout}${path}`}>
                   {({ isActive }) => (
-                    <Button
+                    <SCButton
                       style={{
                         boxShadow: "none",
                         backgroundColor: isActive
@@ -80,7 +81,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
                       >
                         {name}
                       </Typography>
-                    </Button>
+                    </SCButton>
                   )}
                 </NavLink>
               </li>

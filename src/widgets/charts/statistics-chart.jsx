@@ -1,3 +1,4 @@
+import SCButton from "@/components/SCButton";
 import {
   Card,
   CardHeader,
@@ -5,16 +6,14 @@ import {
   CardFooter,
   Typography,
   Avatar,
-  
 } from "@material-tailwind/react";
+import { MapPinIcon } from "@heroicons/react/24/outline";
 import PropTypes from "prop-types";
-import Chart from "react-apexcharts";
 
-export function StatisticsChart({ color, chart, title, description, footer }) {
+export function StatisticsChart({ title, description, footer }) {
   return (
     <Card>
       <CardHeader variant="gradient">
-        {/* <Chart {...chart} /> */}
         <img
           src="https://www.socias.org/wp-content/uploads/jet-engine-forms/906/2023/02/20230202_174811-scaled.jpg"
           alt="project-1"
@@ -35,13 +34,16 @@ export function StatisticsChart({ color, chart, title, description, footer }) {
         <Typography variant="small" className="font-normal text-blue-gray-600">
           {description}
         </Typography>
+        <Typography variant="small" className="font-bold text-pink-600">
+          Salud
+        </Typography>
       </CardBody>
       {footer && (
         <CardFooter className="border-t border-blue-gray-50 px-6 py-5">
           <div className="w-full rounded-full bg-gray-200 dark:bg-gray-700">
             <div
-              className="mb-2 rounded-full bg-blue-600 p-0.5 text-center text-xs font-medium leading-none text-blue-100"
-              style={{ width: "45%" }}
+              className="mb-2 rounded-full p-0.5 text-center text-xs font-medium leading-none text-white"
+              style={{ width: "45%", backgroundColor: "rgb(255, 119, 175 )" }}
             >
               45%
             </div>
@@ -51,8 +53,24 @@ export function StatisticsChart({ color, chart, title, description, footer }) {
             variant="small"
             className="font-normal text-blue-gray-600"
           >
-            4 socias han aportado a este proyecto
+            4 socias han invertido
           </Typography>
+
+          <Typography
+            variant="small"
+            className="font-normal text-blue-gray-600"
+          >
+            Faltan 7 días
+          </Typography>
+          <Typography
+            variant="small"
+            className="flex items-center font-normal text-blue-gray-600"
+          >
+            <MapPinIcon strokeWidth={2} className="h-4 w-4 text-inherit" />
+            Barranquilla
+          </Typography>
+          <br />
+          <SCButton>Ver proyecto</SCButton>
         </CardFooter>
       )}
     </Card>

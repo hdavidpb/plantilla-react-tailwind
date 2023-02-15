@@ -9,6 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import PropTypes from "prop-types";
+import ProgressBar from "@/components/ProgressBar";
 
 export function StatisticsChart({ title, description, footer }) {
   return (
@@ -40,14 +41,7 @@ export function StatisticsChart({ title, description, footer }) {
       </CardBody>
       {footer && (
         <CardFooter className="border-t border-blue-gray-50 px-6 py-5">
-          <div className="w-full rounded-full bg-gray-200 dark:bg-gray-700">
-            <div
-              className="mb-2 rounded-full p-0.5 text-center text-xs font-medium leading-none text-white"
-              style={{ width: "45%", backgroundColor: "rgb(255, 119, 175 )" }}
-            >
-              45%
-            </div>
-          </div>
+          <ProgressBar width={45} />
           {footer}
           <Typography
             variant="small"

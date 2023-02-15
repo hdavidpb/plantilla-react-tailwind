@@ -30,7 +30,7 @@ export function Tables() {
           size="xxl"
         />
         <CardBody>
-          <div className="ml-1 mt-10 flex flex-col justify-between sm:items-start md:flex-row md:items-start">
+          <div className="ml-1 mt-10 flex flex-col justify-between gap-3 sm:items-start md:flex-row md:items-start">
             <div className="flex flex-col">
               <Typography variant="h3" className="text-black">
                 Javier Polo

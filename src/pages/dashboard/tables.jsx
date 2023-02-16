@@ -205,7 +205,7 @@ export function Tables() {
                 Conexiones
               </Typography>
               <CardBody className="flex flex-col items-center justify-start gap-3">
-                <ProgressBar width={75} />
+               
                 <div className="flex w-full items-center justify-start gap-2">
                   <Avatar
                     variant="circular"

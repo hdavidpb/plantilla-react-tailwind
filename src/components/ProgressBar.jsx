@@ -1,11 +1,13 @@
 import React from "react";
 
-const ProgressBar = ({ width }) => {
+const ProgressBar = ({ width, className }) => {
   return (
-    <div className="w-full rounded-full bg-gray-200 dark:bg-gray-700">
+    <div
+      className={`${className} w-full rounded-full bg-gray-200 dark:bg-gray-700`}
+    >
       <div
-        className="rounded-full p-0.5 text-center text-xs font-medium leading-none text-white"
-        style={{ width: `${width}%`, backgroundColor: "rgb(255, 119, 175 )" }}
+        className="rounded-full bg-socias-pink p-0.5 text-center text-xs font-medium leading-none text-white"
+        style={{ width: `${width}%` }}
       >
         {`${width}%`}
       </div>

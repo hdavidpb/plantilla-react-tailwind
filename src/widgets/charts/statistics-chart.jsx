@@ -6,12 +6,16 @@ import {
   CardFooter,
   Typography,
   Avatar,
+  Tooltip,
 } from "@material-tailwind/react";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import PropTypes from "prop-types";
 import ProgressBar from "@/components/ProgressBar";
+import { RocketLaunchIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
+export function StatisticsChart({ title, description }) {
+  const navigate = useNavigate();
 
-export function StatisticsChart({ title, description, footer }) {
   return (
     <Card>
       <CardHeader variant="gradient">
@@ -39,34 +43,71 @@ export function StatisticsChart({ title, description, footer }) {
           Salud
         </Typography>
       </CardBody>
-      {footer && (
-        <CardFooter className="border-t border-blue-gray-50 px-6 py-5">
-          <ProgressBar width={45} />
-          {footer}
-          <Typography
-            variant="small"
-            className="font-normal text-blue-gray-600"
-          >
-            4 socias han invertido
-          </Typography>
 
-          <Typography
-            variant="small"
-            className="font-normal text-blue-gray-600"
-          >
-            Faltan 7 días
-          </Typography>
-          <Typography
-            variant="small"
-            className="flex items-center font-normal text-blue-gray-600"
-          >
-            <MapPinIcon strokeWidth={2} className="h-4 w-4 text-inherit" />
-            Barranquilla
-          </Typography>
-          <br />
-          <SCButton>Ver proyecto</SCButton>
-        </CardFooter>
-      )}
+      <CardFooter className="flex flex-col items-start justify-start gap-1 border-t border-blue-gray-50 px-6 py-5">
+        <ProgressBar width={45} />
+        <Typography
+          variant="small"
+          className="flex items-center font-normal text-blue-gray-600"
+        >
+          <RocketLaunchIcon strokeWidth={2} className="h-4 w-4 text-inherit" />
+
+          <Tooltip content={"Javier"}>
+            <Avatar
+              src="https://cdn2.hubspot.net/hubfs/53/Que%20es%20un%20emprendedor.jpg"
+              alt="avatar"
+              size="xs"
+              variant="circular"
+              className="cursor-pointer border-2 border-white"
+            />
+          </Tooltip>
+          <Tooltip content={"Javier"}>
+            <Avatar
+              src="https://latinaslifestyle.org/wp-content/uploads/2021/11/Tienes-personalidad-de-emprendedora-2.png"
+              alt="avatar"
+              size="xs"
+              variant="circular"
+              className="-ml-2.5 cursor-pointer border-2 border-white"
+            />
+          </Tooltip>
+          <Tooltip content={"Javier"}>
+            <Avatar
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgv2h1zoYcSL1NiNqtiROnPWrDAFOxWO67zg&usqp=CAU"
+              alt="avatar"
+              size="xs"
+              variant="circular"
+              className="-ml-2.5 cursor-pointer border-2 border-white"
+            />
+          </Tooltip>
+          <Tooltip content={"Javier"}>
+            <Avatar
+              src="http://www.kondinero.com/hubfs/Blog_Posts/Caractersticas-de-una-persona-emprendedora.jpg"
+              alt="avatar"
+              size="xs"
+              variant="circular"
+              className="-ml-2.5 cursor-pointer border-2 border-white"
+            />
+          </Tooltip>
+        </Typography>
+        <Typography variant="small" className="font-normal text-blue-gray-600">
+          4 socias han invertido
+        </Typography>
+
+        <Typography variant="small" className="font-normal text-blue-gray-600">
+          Faltan 7 días
+        </Typography>
+        <Typography
+          variant="small"
+          className="flex items-center font-normal text-blue-gray-600"
+        >
+          <MapPinIcon strokeWidth={2} className="h-4 w-4 text-inherit" />
+          Barranquilla
+        </Typography>
+        <br />
+        <SCButton onClick={() => navigate("/projects/project-detail")}>
+          Ver proyecto
+        </SCButton>
+      </CardFooter>
     </Card>
   );
 }

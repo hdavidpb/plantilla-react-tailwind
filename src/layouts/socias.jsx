@@ -1,14 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import { Cog6ToothIcon } from "@heroicons/react/24/solid";
-import { IconButton } from "@material-tailwind/react";
-import {
-  Sidenav,
-  DashboardNavbar,
-  Configurator,
-  Footer,
-} from "@/widgets/layout";
+
+import { Sidenav, DashboardNavbar } from "@/widgets/layout";
 import routes from "@/routes";
 import { useMaterialTailwindController, setOpenConfigurator } from "@/context";
+import { ProjectDetailPage } from "@/pages/dashboard";
 
 export function Socias() {
   const [controller, dispatch] = useMaterialTailwindController();
@@ -18,9 +13,6 @@ export function Socias() {
     <div className="min-h-screen bg-blue-gray-50/50">
       <Sidenav
         routes={routes}
-        // brandImg={
-        //   sidenavType === "dark" ? "/img/logo-ct.png" : "/img/logo-ct-dark.png"
-        // }
         brandImg="https://www.socias.org/wp-content/uploads/2022/08/logotipo.svg"
       />
       <div className="p-4 xl:ml-80">
@@ -43,6 +35,7 @@ export function Socias() {
                 <Route exact path={path} element={element} />
               ))
           )}
+          <Route exact path="/project-detail" element={<ProjectDetailPage />} />
         </Routes>
         {/* <div className="text-blue-gray-600">
           <Footer />

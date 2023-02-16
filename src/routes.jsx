@@ -2,15 +2,18 @@ import {
   HomeIcon,
   UserCircleIcon,
   TableCellsIcon,
-  BellIcon,
   ArrowRightOnRectangleIcon,
-  UserPlusIcon,
   BriefcaseIcon,
   BanknotesIcon,
   FolderIcon,
-  LockClosedIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
+import {
+  ProjectsPage,
+  CampainsPage,
+  ProfilePage,
+  Notifications,
+  ProjectDetailPage,
+} from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
 
 const icon = {
@@ -25,19 +28,20 @@ export const routes = [
         icon: <HomeIcon {...icon} />,
         name: "Proyectos",
         path: "/home",
-        element: <Home />,
+        element: <ProjectsPage />,
       },
+
       {
         icon: <TableCellsIcon {...icon} />,
         name: "Mis campañas",
         path: "/campains",
-        element: <Profile />,
+        element: <CampainsPage />,
       },
       {
         icon: <UserCircleIcon {...icon} />,
         name: "Mi perfil",
         path: "/perfil",
-        element: <Tables />,
+        element: <ProfilePage />,
       },
       {
         icon: <BriefcaseIcon {...icon} />,

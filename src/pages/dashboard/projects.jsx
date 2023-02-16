@@ -16,37 +16,13 @@ import {
   Tab,
   TabsHeader,
 } from "@material-tailwind/react";
-import { RocketLaunchIcon } from "@heroicons/react/24/outline";
 
 import { StatisticsChart } from "@/widgets/charts";
-import {
-  statisticsCardsData,
-  statisticsChartsData,
-  projectsTableData,
-  ordersOverviewData,
-} from "@/data";
+import { statisticsChartsData } from "@/data";
 
-export function Home() {
+export function ProjectsPage() {
   return (
     <div className="mt-12">
-      {/* <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
-        {statisticsCardsData.map(({ icon, title, footer, ...rest }) => (
-          <StatisticsCard
-            key={title}
-            {...rest}
-            title={title}
-            icon={React.createElement(icon, {
-              className: "w-6 h-6 text-white",
-            })}
-            footer={
-              <Typography className="font-normal text-blue-gray-600">
-                <strong className={footer.color}>{footer.value}</strong>
-                &nbsp;{footer.label}
-              </Typography>
-            }
-          />
-        ))}
-      </div> */}
       <div className="w-100 mb-10">
         <Tabs value="magics">
           <TabsHeader>
@@ -59,73 +35,7 @@ export function Home() {
       </div>
       <div className="mb-6 grid grid-cols-1 gap-y-12 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
         {statisticsChartsData.map((props, idx) => (
-          <StatisticsChart
-            key={idx}
-            {...props}
-            footer={
-              <Typography
-                variant="small"
-                className="flex items-center font-normal text-blue-gray-600"
-              >
-                <RocketLaunchIcon
-                  strokeWidth={2}
-                  className="h-4 w-4 text-inherit"
-                />
-                {
-                  <>
-                    <Tooltip content={"Javier"}>
-                      <Avatar
-                        src="https://cdn2.hubspot.net/hubfs/53/Que%20es%20un%20emprendedor.jpg"
-                        alt="avatar"
-                        size="xs"
-                        variant="circular"
-                        // className={`cursor-pointer border-2 border-white ${
-                        //   key === 0 ? "" : "-ml-2.5"
-                        // }`}
-                        className="cursor-pointer border-2 border-white"
-                      />
-                    </Tooltip>
-                    <Tooltip content={"Javier"}>
-                      <Avatar
-                        src="https://latinaslifestyle.org/wp-content/uploads/2021/11/Tienes-personalidad-de-emprendedora-2.png"
-                        alt="avatar"
-                        size="xs"
-                        variant="circular"
-                        // className={`cursor-pointer border-2 border-white ${
-                        //   key === 0 ? "" : "-ml-2.5"
-                        // }`}
-                        className="-ml-2.5 cursor-pointer border-2 border-white"
-                      />
-                    </Tooltip>
-                    <Tooltip content={"Javier"}>
-                      <Avatar
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgv2h1zoYcSL1NiNqtiROnPWrDAFOxWO67zg&usqp=CAU"
-                        alt="avatar"
-                        size="xs"
-                        variant="circular"
-                        // className={`cursor-pointer border-2 border-white ${
-                        //   key === 0 ? "" : "-ml-2.5"
-                        // }`}
-                        className="-ml-2.5 cursor-pointer border-2 border-white"
-                      />
-                    </Tooltip>
-                    <Tooltip content={"Javier"}>
-                      <Avatar
-                        src="http://www.kondinero.com/hubfs/Blog_Posts/Caractersticas-de-una-persona-emprendedora.jpg"
-                        alt="avatar"
-                        size="xs"
-                        variant="circular"
-                        // className={`cursor-pointer border-2 border-white ${
-                        //   key === 0 ? "" : "-ml-2.5"
-                        // }`}
-                        className="-ml-2.5 cursor-pointer border-2 border-white"
-                      />
-                    </Tooltip>
-                  </>
-                }
-              </Typography>
-            }
-          />
+          <StatisticsChart key={idx} {...props} />
         ))}
       </div>
       {/* <div className="mb-4 grid grid-cols-1 gap-6 xl:grid-cols-3">
@@ -318,4 +228,4 @@ export function Home() {
   );
 }
 
-export default Home;
+export default ProjectsPage;

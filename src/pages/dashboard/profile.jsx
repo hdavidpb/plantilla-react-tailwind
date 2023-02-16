@@ -1,221 +1,261 @@
 import {
   Card,
-  CardBody,
   CardHeader,
-  CardFooter,
-  Avatar,
+  CardBody,
   Typography,
-  Tabs,
-  TabsHeader,
-  Tab,
-  Switch,
+  Avatar,
+  Chip,
   Tooltip,
-  Button,
+  Progress,
 } from "@material-tailwind/react";
-import {
-  HomeIcon,
-  ChatBubbleLeftEllipsisIcon,
-  Cog6ToothIcon,
-  PencilIcon,
-} from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
-import { ProfileInfoCard, MessageCard } from "@/widgets/cards";
-import { platformSettingsData, conversationsData, projectsData } from "@/data";
+import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
+import { authorsTableData, projectsTableData } from "@/data";
+import ProgressBar from "@/components/ProgressBar";
 
-export function Profile() {
+export function ProfilePage() {
   return (
-    <>
-      {/* <div className="relative mt-8 h-72 w-full overflow-hidden rounded-xl bg-[url(https://images.unsplash.com/photo-1531512073830-ba890ca4eba2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80)] bg-cover	bg-center">
-        <div className="absolute inset-0 h-full w-full bg-blue-500/50" />
-      </div> */}
-      <Card className="mx-3 -mt-16 mb-6 lg:mx-4">
-        {/* <CardBody className="p-4">
-          <div className="mb-10 flex items-center justify-between gap-6">
-            <div className="flex items-center gap-6">
-              <Avatar
-                src="/img/bruce-mars.jpeg"
-                alt="bruce-mars"
-                size="xl"
-                className="rounded-lg shadow-lg shadow-blue-gray-500/40"
-              />
-              <div>
-                <Typography variant="h5" color="blue-gray" className="mb-1">
-                  Richard Davis
-                </Typography>
-                <Typography
-                  variant="small"
-                  className="font-normal text-blue-gray-600"
-                >
-                  CEO / Co-Founder
-                </Typography>
-              </div>
-            </div>
-            <div className="w-96">
-              <Tabs value="app">
-                <TabsHeader>
-                  <Tab value="app">
-                    <HomeIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
-                    App
-                  </Tab>
-                  <Tab value="message">
-                    <ChatBubbleLeftEllipsisIcon className="-mt-0.5 mr-2 inline-block h-5 w-5" />
-                    Message
-                  </Tab>
-                  <Tab value="settings">
-                    <Cog6ToothIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
-                    Settings
-                  </Tab>
-                </TabsHeader>
-              </Tabs>
-            </div>
-          </div>
-          <div className="gird-cols-1 mb-12 grid gap-12 px-4 lg:grid-cols-2 xl:grid-cols-3">
-            <div>
-              <Typography variant="h6" color="blue-gray" className="mb-3">
-                Platform Settings
+    <div className="w-100 mt-12 mb-8 flex  flex-col gap-12">
+      <Card>
+        <CardHeader>
+          <img
+            className="h-40 w-full object-cover"
+            src="https://www.xtrafondos.com/descargar.php?id=5846&resolucion=2560x1440"
+            alt="project-1"
+          />
+        </CardHeader>
+        <Avatar
+          className="absolute top-20 left-20  "
+          src="https://uploads-ssl.webflow.com/619916db2569bf79a09da655/61aa7d15a514f23b6b751b01_javier1.jpg"
+          variant="circular"
+          size="xxl"
+        />
+        <CardBody>
+          <div className="ml-1 mt-10 flex flex-col justify-between gap-3 sm:items-start md:flex-row md:items-start">
+            <div className="flex flex-col">
+              <Typography
+                variant="h3"
+                className=" cursor-pointer text-black transition-all hover:text-blue-700"
+              >
+                Javier Polo
               </Typography>
-              <div className="flex flex-col gap-12">
-                {platformSettingsData.map(({ title, options }) => (
-                  <div key={title}>
-                    <Typography className="mb-4 block text-xs font-semibold uppercase text-blue-gray-500">
-                      {title}
-                    </Typography>
-                    <div className="flex flex-col gap-6">
-                      {options.map(({ checked, label }) => (
-                        <Switch
-                          key={label}
-                          id={label}
-                          label={label}
-                          defaultChecked={checked}
-                          labelProps={{
-                            className: "text-sm font-normal text-blue-gray-500",
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <ProfileInfoCard
-              title="Profile Information"
-              description="Hi, I'm Alec Thompson, Decisions: If you can't decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
-              details={{
-                "first name": "Alec M. Thompson",
-                mobile: "(44) 123 1234 123",
-                email: "alecthompson@mail.com",
-                location: "USA",
-                social: (
-                  <div className="flex items-center gap-4">
-                    <i className="fa-brands fa-facebook text-blue-700" />
-                    <i className="fa-brands fa-twitter text-blue-400" />
-                    <i className="fa-brands fa-instagram text-purple-500" />
-                  </div>
-                ),
-              }}
-              action={
-                <Tooltip content="Edit Profile">
-                  <PencilIcon className="h-4 w-4 cursor-pointer text-blue-gray-500" />
-                </Tooltip>
-              }
-            />
-            <div>
-              <Typography variant="h6" color="blue-gray" className="mb-3">
-                Platform Settings
+              <Typography className="text-lg text-gray-800">
+                Carpintero
               </Typography>
-              <ul className="flex flex-col gap-6">
-                {conversationsData.map((props) => (
-                  <MessageCard
-                    key={props.name}
-                    {...props}
-                    action={
-                      <Button variant="text" size="sm">
-                        reply
-                      </Button>
-                    }
-                  />
-                ))}
-              </ul>
+              <Typography className="text-sm text-gray-800">
+                Barranquilla
+              </Typography>
+            </div>
+            <div className=" flex flex-row items-center gap-4">
+              <Typography variant="h1" className="mr-2 text-lg text-gray-900">
+                Sigueme
+              </Typography>
+              <Typography className="text-sm text-gray-900">Ing</Typography>
+              <Typography className="text-sm text-gray-900">Fb</Typography>
+              <Typography className="text-sm text-gray-900">Tw</Typography>
             </div>
           </div>
-          <div className="px-4 pb-4">
-            <Typography variant="h6" color="blue-gray" className="mb-2">
-              Projects
-            </Typography>
-            <Typography
-              variant="small"
-              className="font-normal text-blue-gray-500"
-            >
-              Architects design houses
-            </Typography>
-            <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4">
-              {projectsData.map(
-                ({ img, title, description, tag, route, members }) => (
-                  <Card key={title} color="transparent" shadow={false}>
-                    <CardHeader
-                      floated={false}
-                      color="gray"
-                      className="mx-0 mt-0 mb-4 h-64 xl:h-40"
-                    >
-                      <img
-                        src={img}
-                        alt={title}
-                        className="h-full w-full object-cover"
-                      />
-                    </CardHeader>
-                    <CardBody className="py-0 px-1">
-                      <Typography
-                        variant="small"
-                        className="font-normal text-blue-gray-500"
-                      >
-                        {tag}
-                      </Typography>
-                      <Typography
-                        variant="h5"
-                        color="blue-gray"
-                        className="mt-1 mb-2"
-                      >
-                        {title}
-                      </Typography>
-                      <Typography
-                        variant="small"
-                        className="font-normal text-blue-gray-500"
-                      >
-                        {description}
-                      </Typography>
-                    </CardBody>
-                    <CardFooter className="mt-6 flex items-center justify-between py-0 px-1">
-                      <Link to={route}>
-                        <Button variant="outlined" size="sm">
-                          view project
-                        </Button>
-                      </Link>
-                      <div>
-                        {members.map(({ img, name }, key) => (
-                          <Tooltip key={name} content={name}>
-                            <Avatar
-                              src={img}
-                              alt={name}
-                              size="xs"
-                              variant="circular"
-                              className={`cursor-pointer border-2 border-white ${
-                                key === 0 ? "" : "-ml-2.5"
-                              }`}
-                            />
-                          </Tooltip>
-                        ))}
-                      </div>
-                    </CardFooter>
-                  </Card>
-                )
-              )}
-            </div>
-          </div>
-        </CardBody> */}
-        <h1>CAMPAÑAS</h1>
+        </CardBody>
       </Card>
-    </>
+      {/* mt-2 flex w-full flex-col items-center justify-center gap-2 md:flex-row md:items-start */}
+      <div className="grid grid-flow-row grid-cols-1 md:grid-cols-3">
+        <div className="col-start-1 col-end-3 flex w-full flex-col items-center justify-start gap-10">
+          <Card className="w-full" color="transparent" shadow={false}>
+            <CardHeader>
+              <Typography
+                variant="h4"
+                className="border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black "
+              >
+                Sobre Mi
+              </Typography>
+              <CardBody>
+                <Typography variant="paragraph" className="text-gray-800">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex
+                  aperiam fuga sunt quos sed nisi reiciendis, quas aliquid dicta
+                  corporis id impedit nihil explicabo qui ut dolor cumque velit.
+                  Aut in, eligendi iure maxime at veniam quod aspernatur dolore
+                  non? corporis id impedit nihil explicabo qui ut dolor cumque
+                  velit. Aut in, eligendi iure maxime at veniam quod aspernatur
+                  dolore non?
+                </Typography>
+              </CardBody>
+            </CardHeader>
+          </Card>
+          <Card className="w-full" color="transparent" shadow={false}>
+            <CardHeader>
+              <Typography
+                variant="h4"
+                className="border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black "
+              >
+                Fotos
+              </Typography>
+              <CardBody className="flex flex-wrap items-start justify-start gap-4">
+                <img
+                  className="h-20 w-24 flex-grow  rounded-xl object-cover"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTDEIWJRacIi-qRu-EtyEjHenJxzJTW_P11w&usqp=CAU"
+                  alt="algo 3"
+                />
+                <img
+                  className="h-20 w-24 flex-grow  rounded-xl object-cover"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTDEIWJRacIi-qRu-EtyEjHenJxzJTW_P11w&usqp=CAU"
+                  alt="algo 3"
+                />
+                <img
+                  className="h-20 w-24 flex-grow  rounded-xl object-cover"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTDEIWJRacIi-qRu-EtyEjHenJxzJTW_P11w&usqp=CAU"
+                  alt="algo 3"
+                />
+                <img
+                  className="h-20 w-24 flex-grow  rounded-xl object-cover"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTDEIWJRacIi-qRu-EtyEjHenJxzJTW_P11w&usqp=CAU"
+                  alt="algo 3"
+                />
+                <img
+                  className="h-20 w-24 flex-grow  rounded-xl object-cover"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTDEIWJRacIi-qRu-EtyEjHenJxzJTW_P11w&usqp=CAU"
+                  alt="algo 3"
+                />
+                <img
+                  className="h-20 w-24 flex-grow  rounded-xl object-cover"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTDEIWJRacIi-qRu-EtyEjHenJxzJTW_P11w&usqp=CAU"
+                  alt="algo 3"
+                />
+                <img
+                  className="h-20 w-24 flex-grow  rounded-xl object-cover"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTDEIWJRacIi-qRu-EtyEjHenJxzJTW_P11w&usqp=CAU"
+                  alt="algo 3"
+                />
+                <img
+                  className="h-20 w-24 flex-grow  rounded-xl object-cover"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTDEIWJRacIi-qRu-EtyEjHenJxzJTW_P11w&usqp=CAU"
+                  alt="algo 3"
+                />
+                <img
+                  className="h-20 w-24 flex-grow rounded-xl object-cover"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTDEIWJRacIi-qRu-EtyEjHenJxzJTW_P11w&usqp=CAU"
+                  alt="algo 3"
+                />
+              </CardBody>
+            </CardHeader>
+          </Card>
+        </div>
+        <div className="mt-11 flex w-full flex-col gap-10 md:mt-0">
+          <Card className="w-full " color="transparent" shadow={false}>
+            <CardHeader>
+              <Typography
+                variant="h4"
+                className="border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black"
+              >
+                Completa tu perfil 75%
+              </Typography>
+              <CardBody className="flex flex-col items-center justify-start gap-3">
+                <ProgressBar width={75} />
+                <div className="flex w-full items-center justify-start gap-2">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-green-100 text-green-900">
+                    ✓
+                  </div>
+                  <Typography
+                    variant="paragraph"
+                    className="text-black transition-all "
+                  >
+                    Foto de Perfil
+                  </Typography>
+                </div>
+                <div className="flex w-full items-center justify-start gap-1">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-900">
+                    X
+                  </div>
+                  <Typography
+                    variant="paragraph"
+                    className=" cursor-pointer text-black transition-all hover:text-blue-700"
+                  >
+                    Correo electronico
+                  </Typography>
+                </div>
+                <div className="flex w-full items-center justify-start gap-1">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-900">
+                    X
+                  </div>
+                  <Typography
+                    variant="paragraph"
+                    className=" cursor-pointer text-black transition-all hover:text-blue-700"
+                  >
+                    Documentación
+                  </Typography>
+                </div>
+                <div className="flex w-full  items-center justify-start gap-1 ">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-red-100 text-red-900">
+                    X
+                  </div>
+                  <Typography
+                    variant="paragraph"
+                    className=" cursor-pointer text-black transition-all hover:text-blue-700"
+                  >
+                    Dirección
+                  </Typography>
+                </div>
+              </CardBody>
+            </CardHeader>
+          </Card>
+          <Card className="w-full " color="transparent" shadow={false}>
+            <CardHeader>
+              <Typography
+                variant="h4"
+                className="border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black"
+              >
+                Conexiones
+              </Typography>
+              <CardBody className="flex flex-col items-center justify-start gap-3">
+                <div className="flex w-full items-center justify-start gap-2">
+                  <Avatar
+                    variant="circular"
+                    src="https://www.hoydinero.com/__export/1635633231899/sites/elimparcial/img/2021/10/30/mujeres_emprendedoras_1.jpg_1345759582.jpg"
+                    size="sm"
+                  />
+                  <div className="flex flex-col">
+                    <Typography variant="h6">Julia Marineli</Typography>
+                    <Typography variant="small">Emprendedora</Typography>
+                  </div>
+                </div>
+                <div className="flex w-full items-center justify-start gap-2">
+                  <Avatar
+                    variant="circular"
+                    src="https://uvn-brightspot.s3.amazonaws.com/assets/vixes/imj/imujer/c/consejos-de-belleza-para-una-mujer-de-negocios-2.jpg"
+                    size="sm"
+                  />
+                  <div className="flex flex-col">
+                    <Typography variant="h6">Adriana Copenague</Typography>
+                    <Typography variant="small">Emprendedora</Typography>
+                  </div>
+                </div>
+                <div className="flex w-full items-center justify-start gap-2">
+                  <Avatar
+                    variant="circular"
+                    src="https://akns-images.eonline.com/eol_images/Entire_Site/2021118/rs_1024x759-211208115534-imparables_podcast.jpg?fit=around%7C1024:759&output-quality=90&crop=1024:759;center,top"
+                    size="sm"
+                  />
+                  <div className="flex flex-col">
+                    <Typography variant="h6">Rosa Mel</Typography>
+                    <Typography variant="small">Emprendedora</Typography>
+                  </div>
+                </div>
+                <div className="flex w-full items-center justify-start gap-2">
+                  <Avatar
+                    variant="circular"
+                    src="https://muchosnegociosrentables.com/wp-content/uploads/2015/11/mujer-emprendedora-sonriendo.jpg"
+                    size="sm"
+                  />
+                  <div className="flex flex-col">
+                    <Typography variant="h6">Mocica Gal Gadoth</Typography>
+                    <Typography variant="small">Emprendedora</Typography>
+                  </div>
+                </div>
+              </CardBody>
+            </CardHeader>
+          </Card>
+        </div>
+      </div>
+    </div>
   );
 }
 
-export default Profile;
+export default ProfilePage;

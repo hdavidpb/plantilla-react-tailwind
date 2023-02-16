@@ -21,7 +21,7 @@ export function ProjectDetailPage() {
           />
         </CardHeader>
         <Avatar
-          className="absolute top-20 left-20  "
+          className="absolute top-20 left-20 border-2 border-solid border-white"
           src="https://uploads-ssl.webflow.com/619916db2569bf79a09da655/61aa7d15a514f23b6b751b01_javier1.jpg"
           variant="circular"
           size="xxl"

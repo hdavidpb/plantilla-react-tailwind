@@ -30,7 +30,7 @@ export function StatisticsChart({ title, description }) {
           size="xl"
           variant="circular"
           src="https://uploads-ssl.webflow.com/619916db2569bf79a09da655/61aa7d15a514f23b6b751b01_javier1.jpg"
-          className="absolute -top-10 right-6"
+          className="absolute -top-10 right-6 border-2 border-solid border-white"
         />
 
         <Typography variant="h6" color="blue-gray">
@@ -39,7 +39,7 @@ export function StatisticsChart({ title, description }) {
         <Typography variant="small" className="font-normal text-blue-gray-600">
           {description}
         </Typography>
-        <Typography variant="small" className="font-bold text-pink-600">
+        <Typography variant="small" className="font-bold text-socias-pink">
           Salud
         </Typography>
       </CardBody>

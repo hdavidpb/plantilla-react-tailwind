@@ -40,8 +40,8 @@ export function DashboardNavbar() {
       fullWidth
       blurred={fixedNavbar}
     >
-      <div className="flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center">
-        <div className="capitalize">
+      <div className="flex flex-col-reverse justify-end gap-6 md:flex-row md:items-center">
+        {/* <div className="capitalize">
           <Breadcrumbs
             className={`bg-transparent p-0 transition-all ${
               fixedNavbar ? "mt-1" : ""
@@ -67,7 +67,7 @@ export function DashboardNavbar() {
           <Typography variant="h6" color="blue-gray">
             {page}
           </Typography>
-        </div>
+        </div> */}
         <div className="flex items-center justify-between">
           <IconButton
             variant="text"

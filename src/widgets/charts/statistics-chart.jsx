@@ -45,7 +45,26 @@ export function StatisticsChart({ title, description }) {
       </CardBody>
 
       <CardFooter className="flex flex-col items-start justify-start gap-1 border-t border-blue-gray-50 px-6 py-5">
+        <div className="flex items-center justify-center gap-3">
+          <Typography
+            variant="small"
+            className="font-normal text-blue-gray-600"
+          >
+            Meta de recaudación
+          </Typography>
+          <Typography variant="small" className="font-bold text-socias-pink">
+            COP 20,000.000
+          </Typography>
+        </div>
+
         <ProgressBar width={45} />
+
+        <Typography
+          variant="small"
+          className=" mt-2  rounded-md border-2 border-socias-pink px-3  font-bold text-socias-pink"
+        >
+          7 días restantes
+        </Typography>
         <Typography
           variant="small"
           className="flex items-center font-normal text-blue-gray-600"
@@ -93,14 +112,14 @@ export function StatisticsChart({ title, description }) {
           4 socias han invertido
         </Typography>
 
-        <Typography variant="small" className="font-normal text-blue-gray-600">
-          Faltan 7 días
-        </Typography>
         <Typography
           variant="small"
-          className="flex items-center font-normal text-blue-gray-600"
+          className="flex items-center font-bold text-socias-purple"
         >
-          <MapPinIcon strokeWidth={2} className="h-4 w-4 text-inherit" />
+          <MapPinIcon
+            strokeWidth={2}
+            className="h-4 w-4 font-bold text-inherit text-socias-purple"
+          />
           Barranquilla
         </Typography>
         <br />

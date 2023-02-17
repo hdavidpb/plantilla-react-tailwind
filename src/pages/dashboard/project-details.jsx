@@ -5,7 +5,22 @@ import {
   Typography,
   Avatar,
 } from "@material-tailwind/react";
-import { MapPinIcon } from "@heroicons/react/24/outline";
+import {
+  MapPinIcon,
+  BanknotesIcon,
+  SparklesIcon,
+  AcademicCapIcon,
+  BoltIcon,
+  CheckBadgeIcon,
+  ShieldExclamationIcon,
+  GlobeAmericasIcon,
+  ArrowsPointingInIcon,
+  TagIcon,
+  ShoppingBagIcon,
+  UserCircleIcon,
+  StarIcon,
+} from "@heroicons/react/24/outline";
+import { BsFacebook, BsInstagram, BsTwitter, BsLinkedin } from "react-icons/bs";
 import ProgressBar from "@/components/ProgressBar";
 import SCButton from "@/components/SCButton";
 
@@ -32,28 +47,46 @@ export function ProjectDetailPage() {
               <Typography variant="h3" className=" cursor-pointer text-black">
                 Sombreritos curramberos
               </Typography>
-              <Typography className="text-lg text-gray-800">
-                Javier Polo
-              </Typography>
+              <div className="flex items-center justify-start gap-3">
+                <Typography className="text-lg font-bold text-gray-800">
+                  Javier Polo
+                </Typography>
+                <Typography
+                  variant="small"
+                  className="rounded-md border-2 border-socias-pink px-3  font-bold text-socias-pink"
+                >
+                  Socia
+                </Typography>
+              </div>
+
               <div className="flex items-center justify-center gap-2">
                 <ProgressBar width={45} className="flex-1" />
                 <Typography className="text-sm font-bold text-socias-pink">
-                  $ 20,000.000
+                  COP 20,000.000
                 </Typography>
               </div>
-              <Typography className="text-sm text-gray-800">
-                Faltan 7 días
+              <Typography
+                variant="small"
+                className="w-max rounded-md border-2 border-socias-pink px-3 font-bold text-socias-pink"
+              >
+                7 días restantes
               </Typography>
               <Typography
                 variant="small"
-                className="flex items-center font-normal text-blue-gray-600"
+                className="flex items-center font-bold text-socias-purple "
               >
-                <MapPinIcon strokeWidth={2} className="h-4 w-4 text-inherit" />
+                <MapPinIcon
+                  strokeWidth={2}
+                  className="h-4 w-4 font-bold text-inherit text-socias-purple "
+                />
                 Barranquilla
               </Typography>
             </div>
             <div className=" flex flex-row items-center justify-center gap-4">
-              <SCButton>$ Invertir</SCButton>
+              <SCButton className="flex w-36 items-center justify-center gap-3">
+                <BanknotesIcon className="text-white" width={20} />
+                <h1>Invertir</h1>
+              </SCButton>
             </div>
           </div>
         </CardBody>
@@ -63,22 +96,114 @@ export function ProjectDetailPage() {
         <div className="col-start-1 col-end-3 flex w-full flex-col items-center justify-start gap-10">
           <Card className="w-full" color="transparent" shadow={false}>
             <CardHeader>
-              <Typography
-                variant="h4"
-                className="border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black "
-              >
-                Sobre el proyecto
-              </Typography>
-              <CardBody>
-                <Typography variant="paragraph" className="text-gray-800">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex
-                  aperiam fuga sunt quos sed nisi reiciendis, quas aliquid dicta
-                  corporis id impedit nihil explicabo qui ut dolor cumque velit.
-                  Aut in, eligendi iure maxime at veniam quod aspernatur dolore
-                  non? corporis id impedit nihil explicabo qui ut dolor cumque
-                  velit. Aut in, eligendi iure maxime at veniam quod aspernatur
-                  dolore non?
-                </Typography>
+              <div className="flex items-center justify-start gap-3 border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black ">
+                <SparklesIcon width={20} className="text-socias-purple" />
+                <Typography variant="h4">Sobre el proyecto</Typography>
+              </div>
+              <CardBody className="flex flex-col items-start justify-start gap-4">
+                <div className="flex w-full flex-col items-start justify-start gap-5">
+                  <div className="flex items-center justify-start gap-3 text-black ">
+                    <AcademicCapIcon width={16} className="text-socias-pink" />
+                    <Typography variant="h6">Objetivo de la Campaña</Typography>
+                  </div>
+                  <p className="flex w-full items-center justify-start gap-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Possimus asperiores magnam soluta vitae reiciendis adipisci
+                    nisi aspernatur dolorem quia officiis.
+                  </p>
+                </div>
+                <div className="flex w-full flex-col items-start justify-start gap-5">
+                  <div className="flex items-center justify-start gap-3 text-black ">
+                    <BoltIcon width={16} className="text-socias-pink" />
+                    <Typography variant="h6">
+                      ¿Por qué confiar en nuestro proyecto?
+                    </Typography>
+                  </div>
+                  <p className="flex w-full items-center justify-start gap-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Possimus asperiores magnam soluta vitae reiciendis adipisci
+                    nisi aspernatur dolorem quia officiis.
+                  </p>
+                </div>
+                <div className="flex w-full flex-col items-start justify-start gap-5">
+                  <div className="flex items-center justify-start gap-3 text-black ">
+                    <CheckBadgeIcon width={16} className="text-socias-pink" />
+                    <Typography variant="h6">
+                      ¿Cómo lo haremos realidad?
+                    </Typography>
+                  </div>
+                  <p className="flex w-full items-center justify-start gap-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Possimus asperiores magnam soluta vitae reiciendis adipisci
+                    nisi aspernatur dolorem quia officiis.
+                  </p>
+                </div>
+                <div className="flex w-full flex-col items-start justify-start gap-5">
+                  <div className="flex items-center justify-start gap-3 text-black ">
+                    <ShieldExclamationIcon
+                      width={16}
+                      className="text-socias-pink"
+                    />
+                    <Typography variant="h6">
+                      ¿Cuáles son los riesgos?
+                    </Typography>
+                  </div>
+                  <p className="flex w-full items-center justify-start gap-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Possimus asperiores magnam soluta vitae reiciendis adipisci
+                    nisi aspernatur dolorem quia officiis.
+                  </p>
+                </div>
+                <div className="flex w-full flex-col items-start justify-start gap-5">
+                  <div className="flex items-center justify-start gap-3 text-black ">
+                    <GlobeAmericasIcon
+                      width={16}
+                      className="text-socias-pink"
+                    />
+                    <Typography variant="h6">Impacto Social</Typography>
+                  </div>
+                  <p className="flex w-full items-center justify-start gap-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Possimus asperiores magnam soluta vitae reiciendis adipisci
+                    nisi aspernatur dolorem quia officiis.
+                  </p>
+                </div>
+                <div className="flex w-full flex-col items-start justify-start gap-5">
+                  <div className="flex items-center justify-start gap-3 text-black ">
+                    <ArrowsPointingInIcon
+                      width={16}
+                      className="text-socias-pink"
+                    />
+                    <Typography variant="h6">Tipo de Proyecto</Typography>
+                  </div>
+                  <p className="flex w-full items-center justify-start gap-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Possimus asperiores magnam soluta vitae reiciendis adipisci
+                    nisi aspernatur dolorem quia officiis.
+                  </p>
+                </div>
+                <div className="flex w-full flex-col items-start justify-start gap-5">
+                  <div className="flex items-center justify-start gap-3 text-black ">
+                    <TagIcon width={16} className="text-socias-pink" />
+                    <Typography variant="h6">Categoria</Typography>
+                  </div>
+                  <p className="flex w-full items-center justify-start gap-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Possimus asperiores magnam soluta vitae reiciendis adipisci
+                    nisi aspernatur dolorem quia officiis.
+                  </p>
+                </div>
+                <div className="flex w-full flex-col items-start justify-start gap-5">
+                  <div className="flex items-center justify-start gap-3 text-black ">
+                    <ShoppingBagIcon width={16} className="text-socias-pink" />
+                    <Typography variant="h6">Tipo de venta</Typography>
+                  </div>
+                  <p className="flex w-full items-center justify-start gap-2">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Possimus asperiores magnam soluta vitae reiciendis adipisci
+                    nisi aspernatur dolorem quia officiis.
+                  </p>
+                </div>
               </CardBody>
             </CardHeader>
           </Card>
@@ -143,33 +268,149 @@ export function ProjectDetailPage() {
         <div className="mt-11 flex w-full flex-col gap-10 md:mt-0">
           <Card className="w-full " color="transparent" shadow={false}>
             <CardHeader>
-              <Typography
-                variant="h4"
-                className="border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black"
-              >
-                Sobre Javier Polo
-              </Typography>
-              <CardBody className="flex flex-col items-center justify-start gap-3">
+              <div className="flex items-center justify-start gap-3 border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black ">
+                <UserCircleIcon width={20} className="text-socias-purple" />
+                <Typography variant="h4">Sobre la socia</Typography>
+              </div>
+              <CardBody className="flex flex-col items-start justify-start gap-3">
                 <div className="flex w-full items-center justify-start gap-2">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Possimus asperiores magnam soluta vitae reiciendis adipisci
-                  nisi aspernatur dolorem quia officiis.
+                  <Typography className="text-2xl font-bold text-gray-800">
+                    Javier Polo
+                  </Typography>
+                  <Typography
+                    variant="small"
+                    className="w-max rounded-xl border-2 border-socias-purple px-3 py-1 font-bold text-socias-purple"
+                  >
+                    44 Años
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Brief de la socia
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    Ventas
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Experiencia
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    15 Años
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Logros
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    Gerencia
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Ubicación
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    Barranquilla - Colombia
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Redes Sociales
+                  </Typography>
+                  <div className="flex flex-wrap items-center justify-start gap-3">
+                    <BsFacebook
+                      size={20}
+                      className="cursor-pointer text-socias-purple transition-colors hover:text-socias-pink"
+                    />
+                    <BsInstagram
+                      size={20}
+                      className="cursor-pointer text-socias-purple transition-colors hover:text-socias-pink"
+                    />
+                    <BsTwitter
+                      size={20}
+                      className="cursor-pointer text-socias-purple transition-colors hover:text-socias-pink"
+                    />
+                    <BsLinkedin
+                      size={20}
+                      className="cursor-pointer text-socias-purple transition-colors hover:text-socias-pink"
+                    />
+                  </div>
                 </div>
               </CardBody>
             </CardHeader>
           </Card>
           <Card className="w-full " color="transparent" shadow={false}>
             <CardHeader>
-              <Typography
-                variant="h4"
-                className="border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black"
-              >
-                Sobre el negocio
-              </Typography>
-              <CardBody className="flex flex-col items-center justify-start gap-3">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere
-                impedit rerum recusandae porro qui libero deleniti enim earum
-                sunt amet.
+              <div className="flex items-center justify-start gap-3 border-b-2 border-gray-300 pl-6 pt-6 pb-1 text-black ">
+                <StarIcon width={20} className="text-socias-purple" />
+                <Typography variant="h4">Sobre el negocio</Typography>
+              </div>
+              <CardBody className="flex flex-col items-start justify-start gap-3">
+                <Typography className="text-2xl font-bold text-gray-800">
+                  Sombreritos curramberos
+                </Typography>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Descripción del Negocio
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Corporis mollitia consectetur pariatur suscipit cumque
+                    repellendus, labore rerum sint quae, explicabo, cum iure
+                    quidem rem fugiat omnis dolor natus libero aperiam.
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Representante Legal
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    NEERO
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Industria
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    Ventas
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Antiguedad
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    15 Años
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Equipo
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    Sombreritos al poder
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Ingresos del ultimo año
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    COP 150,000.000
+                  </Typography>
+                </div>
+                <div className="flex flex-col items-start justify-start gap-1">
+                  <Typography className="text-lg font-bold text-gray-800">
+                    Lugar Nacimiento
+                  </Typography>
+                  <Typography className="text-sm font-normal text-gray-800">
+                    Barranquilla - Colombia
+                  </Typography>
+                </div>
               </CardBody>
             </CardHeader>
           </Card>

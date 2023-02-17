@@ -7,6 +7,9 @@ module.exports = withMT({
     extend: {
       colors: {
         "socias-pink": "rgb(255, 119, 175 )",
+        "socias-purple": "#aa5dd6",
+        "socias-black": "#4C4C53",
+        "socias-yellow": "#FFEFC4",
       },
     },
   },
